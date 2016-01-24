@@ -32,8 +32,59 @@ app.config(function($routeProvider) {
         {
             controller: 'CategoriesCtrl',
             templateUrl: 'partials/category-view.html',
-
-        }).otherwise({ redirectTo: '/games' });
+            resolve: {
+                query: function ($route) { $route.current.params.query = '79'; }
+            }
+        })
+        .when('/featured',
+            {
+                controller: 'CategoriesCtrl',
+                templateUrl: 'partials/category-view.html',
+                resolve: {
+                    query: function ($route) { $route.current.params.query = '39'; }
+                }
+            })
+        .when('/slots',
+            {
+                controller: 'CategoriesCtrl',
+                templateUrl: 'partials/category-view.html',
+                resolve: {
+                    query: function ($route) { $route.current.params.query = '3'; }
+                }
+            })
+        .when('/roulette',
+            {
+                controller: 'CategoriesCtrl',
+                templateUrl: 'partials/category-view.html',
+                resolve: {
+                    query: function ($route) { $route.current.params.query = '25'; }
+                }
+            })
+        .when('/blackjack',
+            {
+                controller: 'CategoriesCtrl',
+                templateUrl: 'partials/category-view.html',
+                resolve: {
+                    query: function ($route) { $route.current.params.query = '2'; }
+                }
+            })
+        .when('/jackpots',
+            {
+                controller: 'CategoriesCtrl',
+                templateUrl: 'partials/category-view.html',
+                resolve: {
+                    query: function ($route) { $route.current.params.query = '4'; }
+                }
+            })
+        .when('/live',
+            {
+                controller: 'CategoriesCtrl',
+                templateUrl: 'partials/category-view.html',
+                resolve: {
+                    query: function ($route) { $route.current.params.query = '33'; }
+                }
+            })
+        .otherwise({ redirectTo: '/featured' });
 });
 //hard coded the data for the moment
 //TODO: move it into a database
@@ -73,10 +124,10 @@ var loadGames = function(){
     ];
     return games;
 }
-//TODO: have different categories loaded according to the route path
-//load all for now 
-app.controller('CategoriesCtrl', ['$scope', function ($scope) {
-    $scope.query = "39";// test the custom filter to load the feature games
+
+//load categories according to category id
+app.controller('CategoriesCtrl', ['$scope', '$routeParams', function ($scope, $routeParams) {
+    $scope.query = $routeParams.query; // passing from the routing the category id
     $scope.games = loadGames();
 
 }]);
