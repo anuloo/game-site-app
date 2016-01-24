@@ -45,7 +45,7 @@
     </script>
 </head>
 
-<body >
+<body ng-app="MainApp">
 
 <nav class="menu">
     <ul id="menu-items" class="active">
@@ -65,10 +65,15 @@
         <button></button>
     </div>
 </nav>
+
 <div id="center-content">
     <div id="content-wrap">
-       <!-- TODO: partial vew content need to be injected -->
+       <ng-view></ng-view>
     </div>
 </div>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.0/angular.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.0/angular-route.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.0/angular-resource.js"></script>
+<script src="js/app.js"></script>
 </body>
 </html>

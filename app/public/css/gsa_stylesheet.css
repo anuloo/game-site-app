@@ -25,7 +25,8 @@ img {
     display:inline-block;
 }
 
-.menu li{
+
+.menu li {
     font-family: 'Open Sans', Helvetica, sans-serif;
 }
 
@@ -82,13 +83,6 @@ img {
 
 .search-form button:focus {
     outline:0;
-}
-
-/*----- Responsive -----*/
-@media screen and (max-width: 1150px) {
-    .wrap {
-        width:80%;
-    }
 }
 
 @media screen and (max-width: 997px) {
@@ -205,3 +199,9 @@ img {
     overflow: hidden;
 }
 
+.row {
+    margin: 0px 30px 30px 0px;
+    float: left;
+    height: auto;
+
+}
