@@ -25,7 +25,7 @@ img {
     display:inline-block;
 }
 
-
+#no-result,
 .menu li {
     font-family: 'Open Sans', Helvetica, sans-serif;
 }
@@ -203,5 +203,9 @@ img {
     margin: 0px 30px 30px 0px;
     float: left;
     height: auto;
+}
 
+#no-result {
+    color: #ffffff;
+    font-size: 1.1em;
 }

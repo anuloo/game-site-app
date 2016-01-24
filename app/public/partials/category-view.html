@@ -1,4 +1,5 @@
+<div id="no-result" no-result="" ng-show="!filteredGames.length"></div>
 <div class="row"
-     ng-repeat="game in games">
+     ng-repeat="game in filteredGames = (games | categoryFilter: query | filter:txt_search)">
     <img ng-src="{{game.url}}">
 </div>
