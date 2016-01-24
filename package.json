@@ -1,0 +1,25 @@
+{
+  "name": "game-site-app",
+  "version": "0.0.1",
+  "description": "Angular test project",
+  "main": "index.js",
+  "scripts": {
+    "start": "node ./app/server/bin/server"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/anuloo/GameWebsiteApp.git"
+  },
+  "author": "zol",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/anuloo/GameWebsiteApp/issues"
+  },
+  "homepage": "https://github.com/anuloo/GameWebsiteApp#readme",
+  "dependencies": {
+    "body-parser": "^1.14.2",
+    "express": "^4.13.4",
+    "path": "^0.12.7"
+  }
+  
+}
