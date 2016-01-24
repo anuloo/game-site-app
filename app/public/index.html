@@ -1,9 +1,74 @@
+<!DOCTYPE html>
 <html>
 <head>
-    <meta charset="UTF-8">
-    <title>Initial test for the server</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Gamesite App</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <link rel="stylesheet" href="css/gsa_stylesheet.css">
+    <script type="text/javascript">
+        $(document).ready(function() {
+            var content_padding = parseInt($('#content-wrap').css('padding-bottom'), 10);
+            $('.ng-modal-overlay').height(10);
+            $( window ).resize(function() {
+                window.console&&console.log('resized');
+                $('.ng-modal-overlay').height( $('#content-wrap')[0].scrollHeight + content_padding);
+                $('.menu ul').addClass('active');
+            });
+            $('.search-form button').click(function () {
+                $('.search-form input').toggle();
+                if(!$('.search-form input').is(':hidden')){
+                    $('.search-form input').focus();
+                   $('.search-form input').focusout(function(){
+                       $('.search-form input').hide();
+                       $('.search-form input').val("");
+                   });
+
+                }
+            });
+            $('.menu ul li a').click(function (e) {
+                $('.menu ul li').removeClass('selected');
+                $(e.currentTarget).parent('li').addClass('selected');
+                $(this).toggleClass('active');
+                $('.menu ul').toggleClass('active');
+            });
+
+            $('.toggle-nav').click(function(e) {
+                $(this).toggleClass('active');
+                $('.menu ul').toggleClass('active');
+
+                e.preventDefault();
+            });
+        });
+    </script>
 </head>
-<body>
-    <div style="font-size:1.5em; color:red; text-align:center">Server Routing Works</div>
+
+<body >
+
+<nav class="menu">
+    <ul id="menu-items" class="active">
+        <li class="selected"><a href="/#/featured">FEATURED</a> </li>
+        <li><a href="/#/slots">SLOTS</a> </li>
+        <li><a href="/#/roulette">ROULETTE</a> </li>
+        <li><a href="/#/blackjack">BLACKJACK</a></li>
+        <li><a href="/#/jackpots">JACKPOTS</a> </li>
+        <li><a href="/#/live">LIVE</a> </li>
+        <li><a href="/#/games">ALL</a> </li>
+    </ul>
+
+    <a class="toggle-nav" href="#">&#9776;</a>
+
+    <div class="search-form">
+        <input type="text" id="txt_search" placeholder="Enter game title">
+        <button></button>
+    </div>
+</nav>
+<div id="center-content">
+    <div id="content-wrap">
+       <!-- TODO: partial vew content need to be injected -->
+    </div>
+</div>
 </body>
 </html>
