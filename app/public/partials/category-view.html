@@ -1,5 +1,8 @@
 <div id="no-result" no-result="" ng-show="!filteredGames.length"></div>
 <div class="row"
      ng-repeat="game in filteredGames = (games | categoryFilter: query | filter:txt_search)">
-    <img ng-src="{{game.url}}">
+     <a href="" ng-click="toggleModal(game)"><img ng-src="{{game.url}}"></a>
 </div>
+<modal-dialog show='modalShown' width='200px' height='100'>
+    <p>{{ selectedGame.title }}<p>
+</modal-dialog>
