@@ -1,7 +1,8 @@
-var app = angular.module('MainApp', ['ngRoute']);
+angular
+.module('MainApp', ['ngRoute'])
 
 //custom filter helps to filter our data by cat_id
-app.filter('categoryFilter', function() {
+.filter('categoryFilter', function() {
     return function(games,query) {
         var out = [];
 

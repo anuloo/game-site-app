@@ -1,11 +1,12 @@
 //no result
-app.directive('noResult', function() {
+angular
+.module('MainApp').directive('noResult', function() {
     return {
         template: 'Sorry, no result were found!'
     };
-});
+})
 // modal dialog 
-app.directive('modalDialog', function() {
+.directive('modalDialog', function() {
     return {
         restrict: 'E',
         scope: {

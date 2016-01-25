@@ -1,4 +1,5 @@
-app.config(function($routeProvider) {
+angular
+.module('MainApp').config(function($routeProvider) {
     $routeProvider.when('/games',
         {
             controller: 'CategoriesCtrl',

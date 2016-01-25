@@ -1,5 +1,6 @@
 //load categories according to category id
-app.controller('CategoriesCtrl', ['$scope', '$routeParams', '$http', function ($scope, $routeParams, $http) {
+angular
+.module('MainApp').controller('CategoriesCtrl', ['$scope', '$routeParams', '$http', function ($scope, $routeParams, $http) {
     $scope.query = $routeParams.query; // passing from the routing the category id
     $http.get('/games/get').success(function (res) {
         $scope.games = res;
