@@ -6,6 +6,6 @@ To run the project just check it out from github, in the root directory of the p
 
 for the test just type *npm test*
 
-[demo](http://myxperiment.uk:3000/)
+[demo](http://myxperiment.uk:4000/)
 
 
